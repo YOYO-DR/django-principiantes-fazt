@@ -1,0 +1,12 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+<h1>{{project.name|title}}</h1>
+{% for task in tasks %}
+<div class="card">
+  <h1>{{task.title}}</h1>
+</div class="card">
+{% comment %} El empty es como el else de if, hace referencia a que no hay nada que recorrer en tasks {% endcomment %}
+{% empty %}
+<h2>No hay tareas en este proyecto</h2>
+{% endfor %}
+{% endblock content %}

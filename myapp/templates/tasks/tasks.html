@@ -1,0 +1,24 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+<h1>Tasks</h1>
+
+<ul>
+  {# esto es una tarea #}
+  {% for task in tasks %}
+  <li>
+    <b> {% if task.done %}✅{% else %}⏱️{% endif %}{{task.title}}</b>
+    <br />
+    <button>Delete</button>
+    <br />
+    <span>Des: {{task.description}}</span>
+    <br />
+    <span>Project:{{task.project}}</span>
+    <br />
+    <button>Done✅</button>
+  </li>
+
+  {% endfor %}
+</ul>
+{% comment %} Jinja conditionals 2:08:30 {% endcomment %}
+
+{% endblock content %}
